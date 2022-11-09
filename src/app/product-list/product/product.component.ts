@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/models/product';
-import { ProductRepository } from 'src/app/models/product.repository';
 
 @Component({
   selector: 'product',
@@ -8,17 +8,11 @@ import { ProductRepository } from 'src/app/models/product.repository';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-  products: Product[];
-  selectedProduct: Product;
-  productRepository: ProductRepository;
-  constructor() {
-    this.productRepository = new ProductRepository();
-    this.products = this.productRepository.getProducts();
-  }
-
+  @Input() prd: Product;
+  @Output() unSelectEvent = new EventEmitter<void>();
+  constructor() {}
   ngOnInit(): void {}
-
-  selectProduct(product: Product) {
-    this.selectedProduct = product;
+  unselectProduct() {
+    this.unSelectEvent.emit();
   }
 }

@@ -1,2 +1,43 @@
+<product
+  [prd]="selectedProduct"
+  (unSelectEvent)="unselectProduct()"
+  *ngIf="selectedProduct"
+></product>
 
-<product></product>
+<div *ngIf="products.length > 0; else noProducts">
+  <ng-template
+    [ngTemplateOutlet]="productList"
+    [ngTemplateOutletContext]="{ product: products }"
+  ></ng-template>
+</div>
+
+<ng-template #productList let-product="product">
+  <div *ngFor="let p of product">
+    <div *ngIf="p.isActive" class="card mb-3 p-1">
+      <div class="row">
+        <div class="col-3">
+          <img
+            src="/assets/images/{{ p.imageUrl }}"
+            alt=""
+            class="img-fluid rounded-start"
+          />
+        </div>
+        <div class="col-9">
+          <div class="card-body">
+            <div class="card-title">{{ p.name }}</div>
+            <p class="cart-test">{{ p.description }}</p>
+            <button (click)="selectProduct(p)" class="btn btn-primary">
+              Ürünü Seç
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noProducts>
+  <div class="alert alert-warning" *ngIf="products.length == 0">
+    no products
+  </div>
+</ng-template>
