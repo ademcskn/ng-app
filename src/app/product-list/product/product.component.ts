@@ -1,4 +1,3 @@
-import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/models/product';
 
@@ -9,10 +8,11 @@ import { Product } from 'src/app/models/product';
 })
 export class ProductComponent implements OnInit {
   @Input() prd: Product;
-  @Output() unSelectEvent = new EventEmitter<void>();
+  @Output() unSelectEventOutputEvent = new EventEmitter<void>();
   constructor() {}
   ngOnInit(): void {}
+
   unselectProduct() {
-    this.unSelectEvent.emit();
+    this.unSelectEventOutputEvent.emit();
   }
 }

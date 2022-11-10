@@ -1,9 +1,11 @@
-<product
+<!-- <product
   [prd]="selectedProduct"
-  (unSelectEvent)="unselectProduct()"
+  (unSelectEventOutputEvent)="unselectProductParent(selectedProduct)"
   *ngIf="selectedProduct"
-></product>
-
+></product> -->
+<div>
+  <span>Son seçilen ürün : {{ productMessage }}</span>
+</div>
 <div *ngIf="products.length > 0; else noProducts">
   <ng-template
     [ngTemplateOutlet]="productList"
@@ -26,9 +28,9 @@
           <div class="card-body">
             <div class="card-title">{{ p.name }}</div>
             <p class="cart-test">{{ p.description }}</p>
-            <button (click)="selectProduct(p)" class="btn btn-primary">
-              Ürünü Seç
-            </button>
+            <a routerLink="/products/{{ product.id }}" class="btn btn-primary">
+              Ürünü Detay
+            </a>
           </div>
         </div>
       </div>

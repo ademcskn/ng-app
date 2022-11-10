@@ -6,10 +6,18 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product-list/product/product.component';
-import { CategoryComponent } from './category/category.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, ProductListComponent, ProductComponent, CategoryComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    ProductListComponent,
+    ProductComponent,
+    CategoryListComponent,
+    HomeComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

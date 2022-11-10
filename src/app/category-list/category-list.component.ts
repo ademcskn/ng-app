@@ -3,11 +3,11 @@ import { Category } from '../models/category';
 import { CategoryRepository } from '../models/category.repository';
 
 @Component({
-  selector: 'category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css'],
+  selector: 'category-list',
+  templateUrl: './category-list.component.html',
+  styleUrls: ['./category-list.component.css'],
 })
-export class CategoryComponent implements OnInit {
+export class CategoryListComponent implements OnInit {
   categories: Category[];
   selectedCategory: Category | null;
   categoriesRepository: CategoryRepository;
