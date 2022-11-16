@@ -10,6 +10,7 @@ export class ProductRepository {
       imageUrl: '1.jpeg',
       description: 'iyi telefon',
       isActive: true,
+      categoryId: 1,
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ export class ProductRepository {
       imageUrl: '2.jpeg',
       description: 'Güzel telefon',
       isActive: true,
+      categoryId: 2,
     },
     {
       id: 3,
@@ -28,6 +30,7 @@ export class ProductRepository {
       imageUrl: '3.jpeg',
       description: 'Süper telefon',
       isActive: true,
+      categoryId: 3,
     },
     {
       id: 4,
@@ -37,6 +40,7 @@ export class ProductRepository {
       imageUrl: '3.jpeg',
       description: 'Süper iyi telefon',
       isActive: true,
+      categoryId: 1,
     },
   ];
 
@@ -45,5 +49,9 @@ export class ProductRepository {
   }
   getProductById(id: number): Product | undefined {
     return this.products.find((p) => p.id == id);
+  }
+
+  getProductsbyCategoryId(id: number): Product[] {
+    return this.products.filter((p) => p.categoryId == id);
   }
 }

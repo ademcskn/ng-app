@@ -1,20 +1,20 @@
-<div class="card mb-3 p-1 border-warning">
+<div class="card mb-3 p-1" *ngIf="product; else noProduct">
   <div class="row">
     <div class="col-3">
       <img
-        src="/assets/images/{{ prd.imageUrl }}"
+        src="/assets/images/{{ product.imageUrl }}"
         alt=""
         class="img-fluid rounded-start"
       />
     </div>
     <div class="col-9">
       <div class="card-body">
-        <div class="card-title">{{ prd.name }}</div>
-        <p class="cart-test">{{ prd.description }}</p>
-        <button (click)="unselectProduct()" class="btn btn-primary">
-          Seçimi Kaldır
-        </button>
+        <div class="card-title">{{ product.name }}</div>
+        <p class="cart-test">{{ product.description }}</p>
       </div>
     </div>
   </div>
 </div>
+<ng-template #noProduct>
+  <div class="alert alert-warning">no product</div>
+</ng-template>
