@@ -1,8 +1,3 @@
-<!-- <product
-  [prd]="selectedProduct"
-  (unSelectEventOutputEvent)="unselectProductParent(selectedProduct)"
-  *ngIf="selectedProduct"
-></product> -->
 <div *ngIf="products.length > 0; else noProducts">
   <ng-template
     [ngTemplateOutlet]="productList"
