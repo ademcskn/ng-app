@@ -18,20 +18,4 @@ export class AppComponent {
   getTitle() {
     return this.title;
   }
-  createProduct() {
-    const product = {
-      id: 1,
-      category: 1,
-      name: 'Samsung 40',
-      price: 3000,
-      imageUrl: '2.jpeg',
-      description: 'daha gelmeyen telefon',
-      isActive: true,
-      categoryId: 1,
-    };
-
-    this.productService
-      .createProduct(product)
-      .subscribe((result) => console.log(result));
-  }
 }

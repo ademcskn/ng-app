@@ -10,6 +10,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductCreateComponent } from './product-create/product-create.component';
+import { CategoryCreateComponent } from './category-create/category-create.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProductCreateComponent } from './product-create/product-create.componen
     CategoryListComponent,
     HomeComponent,
     ProductCreateComponent,
+    CategoryCreateComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
