@@ -1,8 +1,10 @@
-<div *ngIf="products.length > 0; else noProducts">
-  <ng-template
-    [ngTemplateOutlet]="productList"
-    [ngTemplateOutletContext]="{ product: products }"
-  ></ng-template>
+<div *ngIf="!loading">
+  <div *ngIf="products.length > 0; else noProducts">
+    <ng-template
+      [ngTemplateOutlet]="productList"
+      [ngTemplateOutletContext]="{ product: products }"
+    ></ng-template>
+  </div>
 </div>
 
 <ng-template #productList let-product="product">
@@ -19,7 +21,6 @@
         <div class="col-9">
           <div class="card-body">
             <div class="card-title">{{ p.name }}</div>
-            <p class="cart-test">{{ p.description }}</p>
             <a routerLink="/products/{{ p.id }}" class="btn btn-primary">
               Ürün Detay
             </a>
@@ -35,3 +36,7 @@
     no products
   </div>
 </ng-template>
+
+<div *ngIf="loading" class="spinner-border text-primary" role="status">
+  <span class="sr-only"></span>
+</div>
