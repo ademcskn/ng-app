@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { Category } from '../models/category';
+import { Category } from './category.model';
 
 @Injectable()
 // { providedIn: 'root' //aynı modüle içerisindeki tüm componentlerde kullanacağımız local servis olacaksa burayı kullanıyoruz. Injectable içine...}
